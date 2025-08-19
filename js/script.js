@@ -1,5 +1,6 @@
+import { posts } from "./posts.js";
+
 // Variáveis e Configurações
-let posts = [];
 const postsPerPage = 5;
 let currentPage = 1;
 let filteredPosts = [];
@@ -107,7 +108,6 @@ function filterPostsByCategory(category) {
 
 // Lógica de UI (Menu e Cabeçalho)
 function setupUIListeners() {
-    // Lógica do Cabeçalho Fixo
     const mainHeader = document.getElementById('mainHeader');
     const scrollThreshold = window.innerHeight * 0.8;
 
@@ -121,7 +121,6 @@ function setupUIListeners() {
     window.addEventListener('scroll', handleScroll);
     handleScroll();
 
-    // Lógica do Menu Hambúrguer
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const navLinks = document.querySelector('.nav-links');
     if (hamburgerMenu && navLinks) {
@@ -190,26 +189,13 @@ function setupContactForm() {
     }
 }
 
-
 // Inicialização do Site
 document.addEventListener('DOMContentLoaded', () => {
-    // Carregando os posts do JSON
-    fetch('posts.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Erro ao carregar os posts.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            posts = data;
-            // Chame aqui todas as funções que dependem dos posts carregados
-            setupCategoryFilters();
-            filterPostsByCategory('Todos');
-        })
-        .catch(error => console.error('Houve um erro:', error));
+    // Chame as funções de blog
+    setupCategoryFilters();
+    filterPostsByCategory('Todos');
 
-    // Chame aqui as outras funções de inicialização
+    // Chame as outras funções de inicialização
     setupUIListeners();
     setupContactForm();
 });

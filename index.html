@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Odontológico da Duda - Seu Sorriso Estrela!</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lemon&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header id="mainHeader">
+            <h3 class="site-title">Duda Bandeira</h3>
+            <button class="hamburger-menu" aria-label="Abrir menu de navegação">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-links">
+                    <p><a href="#inicio">Início</a></p>
+                    <p><a href="#sobre-mim">Sobre Mim</a></p>
+                    <p><a href="#blog">Blog</a></p>
+                    <p><a href="#contato">Contato</a></p>
+            </nav>
+    </header>
+
+    <main>
+        <!-- Seção de Apresentação/Landing Page -->
+        <section id="inicio" class="hero-section">
+            <div class="hero-content">
+                <!-- A imagem de fundo será definida no CSS -->
+                <p><span class="welcome-text">Blog Odonto</span>
+                <h1>
+                    <span class="highlight-name">Duda em Pixels</span>
+                </h1>
+                </p>
+                <p class="subtitle">Sua futura dentista, apaixonada por sorrisos brilhantes e bem-estar!</p>
+                <a href="#blog" class="btn primary-btn">Ver Últimos Posts</a>
+            </div>
+        </section>
+
+        <!-- Seção Sobre Mim -->
+        <section id="sobre-mim" class="about-section">
+            <h2>Sobre Mim</h2>
+            <div class="about-content">
+                <p>Meu nome é <strong class="highlight-text">Maria Eduarda (Duda) Bandeira Sales Raso</strong> e sou
+                    estudante de
+                    Odontologia na <strong class="highlight-text">Universidade Federal da Paraíba</strong>.
+                    Desde cedo, tive um grande interesse pela área da saúde e, em especial, pela odontologia, motivada
+                    pela possibilidade de transformar vidas através do sorriso e promover a saúde geral das pessoas.</p>
+                <p>Durante minha jornada acadêmica, tenho me dedicado a aprender as últimas técnicas e abordagens no
+                    tratamento odontológico, participando de <strong class="highlight-text">ligas acadêmicas de Estética
+                        Dental e Saúde Coletiva, além de projetos de voluntariado em comunidades carentes</strong>.
+                    Acredito que a educação continuada e a empatia são pilares fundamentais para um atendimento de
+                    excelência.</p>
+                <p>Este blog é um espaço para compartilhar um pouco do meu aprendizado, desmistificar conceitos e
+                    oferecer informações valiosas sobre como manter um sorriso bonito e saudável. Espero que você
+                    encontre aqui o que procura e se sinta à vontade para interagir!</p>
+            </div>
+        </section>
+
+        <!-- Seção de Posts do Blog -->
+        <section id="blog" class="blog-posts-section">
+            <h2>Últimos Posts</h2>
+            <!-- Adicionado filtro de categorias -->
+            <div id="category-filters" class="category-filters">
+                <!-- Botões de categoria serão carregados aqui pelo JavaScript -->
+            </div>
+
+            <div id="lista-de-posts">
+                <!-- Os resumos dos posts serão carregados aqui pelo JavaScript -->
+                <p>Carregando posts...</p>
+            </div>
+
+            <!-- Adicionado controle de paginação -->
+            <div id="pagination-controls" class="pagination-controls">
+                <!-- Botões de paginação serão carregados aqui pelo JavaScript -->
+            </div>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section id="contato" class="contact-section">
+            <div class="form">
+                <h2>Entre em Contato</h2>
+                <p>Tem alguma dúvida, sugestão ou gostaria de bater um papo? Envie uma mensagem!</p>
+                <form id="contactForm" class="contact-form" action="https://formspree.io/f/mblybgzl"
+                    method="POST">
+                    <div class="form-group">
+                        <label for="nome">Seu Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Seu E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary-btn" id="submitBtn">Enviar Mensagem</button>
+                    <!-- Área para exibir mensagens de status -->
+                    <div id="form-status-message" class="form-status-message"></div>
+                </form>
+                <div class="contact-info">
+                    <p>Ou entre em contato diretamente:</p>
+                    <p><strong>E-mail:</strong> <a href="mailto:contato.duda@email.com">contato.duda@email.com</a></p>
+                    <p><strong>Redes Sociais:</strong> <a href="https://instagram.com/dudaodonto"
+                            target="_blank">Instagram</a> | <a href="https://linkedin.com/in/dudaodonto"
+                            target="_blank">LinkedIn</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Blog da Duda. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="./js/posts.js"></script>
+    <script type="module" src="./js/script.js"></script>
+</body>
+
+</html>

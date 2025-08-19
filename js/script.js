@@ -191,7 +191,7 @@ function setupContactForm() {
 // Inicialização do Site
 document.addEventListener('DOMContentLoaded', () => {
     // Carregando os posts do JSON
-    fetch('posts.json')
+    fetch('../posts.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Erro ao carregar os posts.');

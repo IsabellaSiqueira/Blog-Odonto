@@ -1,5 +1,6 @@
+import { posts } from "./posts.js";
+
 // Variáveis e Configurações
-let posts = [];
 const postsPerPage = 5;
 let currentPage = 1;
 let filteredPosts = [];
@@ -190,21 +191,11 @@ function setupContactForm() {
 
 // Inicialização do Site
 document.addEventListener('DOMContentLoaded', () => {
-    // Carregando os posts do JSON
-    fetch('../posts.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Erro ao carregar os posts.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            posts = data;
-            setupCategoryFilters();
-            filterPostsByCategory('Todos');
-        })
-        .catch(error => console.error('Houve um erro:', error));
+    // Chame as funções de blog
+    setupCategoryFilters();
+    filterPostsByCategory('Todos');
 
+    // Chame as outras funções de inicialização
     setupUIListeners();
     setupContactForm();
 });
